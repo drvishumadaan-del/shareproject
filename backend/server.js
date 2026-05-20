@@ -6,7 +6,7 @@ const app=express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect("mongodb+srv://drvishumadaan_db_user:<db_password>@cluster0.wpazmhu.mongodb.net/")
 const feed=mongoose.model("feed",{feed:String})
 
 app.post("/feed", async (req, res) => {
