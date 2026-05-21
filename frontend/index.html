@@ -8,7 +8,7 @@
     <script>
         const API="https://shareproject.onrender.com"
         async function savefeedback() {
-            const feedback=document.getElementById("feed").value;
+            const feed=document.getElementById("feed").value;
         await fetch(API,{method:"POST", headers:{"content-Type":"application/json"},body:JSON.stringify({feed})});
          alert("saved")
         }
