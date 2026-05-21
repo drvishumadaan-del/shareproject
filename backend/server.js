@@ -10,7 +10,7 @@ mongoose.connect("mongodb+srv://drvishumadaan_db_user:12345@cluster0.wpazmhu.mon
 const feeduser=mongoose.model("feeduser",{feed:String})
 
 app.post("/feedusers", async (req, res) => {
-  const feeduser = new feed({ feed: req.body.feed });
+  const feeduser = new feeduser({ feed: req.body.feed });
   await feeduser.save();
   res.send(feeduser);
 });
