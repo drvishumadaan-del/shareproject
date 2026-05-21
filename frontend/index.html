@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<title>Feedback Form</title>
+</head>
+
+<body>
+
+<input type="text"
+       id="feed"
+       placeholder="Enter">
+
+<button onclick="savefeedback()">
+Submit
+</button>
+
+<script>
+
+const API =
+"https://shareproject.onrender.com/feedusers";
+
+async function savefeedback() {
+
+   const feed =
+   document.getElementById("feed").value;
+
+   console.log(feed);
+
+   await fetch(API, {
+
+      method: "POST",
+
+      headers: {
+         "Content-Type":
+         "application/json"
+      },
+
+      body: JSON.stringify({
+         feed: feed
+      })
+
+   });
+
+   alert("saved");
+}
+
+</script>
+
+</body>
+</html>
