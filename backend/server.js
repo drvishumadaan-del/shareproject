@@ -7,12 +7,12 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect("mongodb+srv://drvishumadaan_db_user:12345@cluster0.wpazmhu.mongodb.net/")
-const feed=mongoose.model("feed",{feed:String})
+const feeduser=mongoose.model("feeduser",{feed:String})
 
-app.post("/feed", async (req, res) => {
-  const feed = new feed({ feed: req.body.feed });
-  await feed.save();
-  res.send(feed);
+app.post("/feedusers", async (req, res) => {
+  const feeduser = new feed({ feed: req.body.feed });
+  await feeduser.save();
+  res.send(feeduser);
 });
 
 app.listen(3000, () => {
